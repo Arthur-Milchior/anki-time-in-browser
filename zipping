@@ -1,0 +1,2 @@
+rm timeInBrowser.zip
+zip timeInBrowser.zip config.* *py  LICENSE *.md zipping --exclude \*~ \*zip
