@@ -1,6 +1,5 @@
 from aqt.browser import *
 from .config import getUserOption
-from .consts import *
 from anki.lang import _
 
 
@@ -70,11 +69,11 @@ def nextDue(self, c, index):
         format = getUserOption("Time format", "%Y-%m-%d @ %H:%M")
         if c.odid:
             return _("(filtered)")
-        elif c.queue == QUEUE_NEW_CRAM or c.type == CARD_NEW:
+        elif c.queue == QUEUE_TYPE_NEW or c.type == CARD_TYPE_NEW:
             return str(c.due)
-        elif c.queue == QUEUE_LRN:
+        elif c.queue == QUEUE_TYPE_LRN:
             return time.strftime(format, time.localtime(c.due))
-        elif c.queue in (QUEUE_REV, QUEUE_DAY_LRN) or (c.type == CARD_DUE and
+        elif c.queue in (QUEUE_TYPE_REV, QUEUE_TYPE_DAY_LEARN_RELEARN) or (c.type == CARD_TYPE_REV and
                                                           c.queue < 0#suspended or buried
         ):
             date = time.time() + ((c.due - self.col.sched.today)*86400)
