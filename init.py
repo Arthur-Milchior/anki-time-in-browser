@@ -50,7 +50,7 @@ def columnData(self, index):
                 return _("(new)")
             elif c.type == 1:
                 return _("(learning)")
-            return fmtTimeSpan(c.ivl*86400)
+            return self.col.backend.format_time_span(c.ivl * 86400)
         elif type == "cardEase":
             if c.type == 0:
                 return _("(new)")
