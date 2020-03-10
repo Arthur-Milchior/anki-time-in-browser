@@ -1,0 +1,1 @@
+* Time format: a time format as indicated in [python documentation](https://docs.python.org/3.8/library/time.html#time.strftime)
