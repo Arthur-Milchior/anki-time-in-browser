@@ -7,7 +7,7 @@
       "description": "Time format: a time format as indicated in https://docs.python.org/3.8/library/time.html#time.strftime",
       "type": "string",
       "default": "%Y-%m-%d @ %H:%M",
-      "pattern": "(%[aAbBcdHIjmMpSUwWxXyYzZ%]|[^%])*"
+      "pattern": "^(%[aAbBcdHIjmMpSUwWxXyYzZ%]|[^%])*$"
     }
   }
 }
