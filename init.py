@@ -15,10 +15,10 @@ def columnData(self, index):
             return self.answer(c)
         elif type == "noteFld":
             f = c.note()
-            return htmlToTextLine(f.fields[self.col.models.sortIdx(f.model())])
+            return htmlToTextLine(f.fields[self.col.models.sortIdx(f.note_type())])
         elif type == "template":
             t = c.template()['name']
-            if c.model()['type'] == MODEL_CLOZE:
+            if c.note_type()['type'] == MODEL_CLOZE:
                 t += " %d" % (c.ord+1)
             return t
         elif type == "cardDue":
@@ -43,7 +43,7 @@ def columnData(self, index):
         elif type == "noteTags":
             return " ".join(c.note().tags)
         elif type == "note":
-            return c.model()['name']
+            return c.note_type()['name']
         elif type == "cardIvl":
             if c.type == 0:
                 return _("(new)")
